@@ -1,11 +1,6 @@
 {
   "students": [
     {
-      "id": 1,
-      "name": "Ana Maria",
-      "course": "Computação"
-    },
-    {
       "id": 2,
       "name": "Fernanda Silva",
       "course": "Computação"
@@ -13,7 +8,28 @@
     {
       "id": 3,
       "name": "João Pedro",
-      "course": "matematica"
+      "course": "Matemática"
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "name": "ADS",
+      "period": "Noturno",
+      "subjects": [
+        "Algoritmos",
+        "Banco de Dados"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "",
+      "period": "",
+      "subjects": [
+        "Algoritmos",
+        "Estrutura de Dados",
+        "Banco de Dados"
+      ]
     }
   ]
 }

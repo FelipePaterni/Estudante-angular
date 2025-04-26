@@ -1,1 +1,76 @@
-<p>course works!</p>
+<div class="container bg-light pb-5">
+  <div class="row">
+    <div class="col-7 m-auto">
+
+      <h1>Cadastro de Cursos</h1>
+
+      <form [formGroup]="formGroupCourse">
+
+        <div class="mb-3">
+          <label for="inputName" class="form-label">Nome:</label>
+          <input formControlName="name" type="text" class="form-control" id="inputName"
+            placeholder="Digite o nome do curso">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label me-4">Período:</label>
+        
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="period" id="periodNoturno" value="Noturno">
+            <label class="form-check-label" for="periodNoturno">Noturno</label>
+          </div>
+        
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="period" id="periodIntegral" value="Integral">
+            <label class="form-check-label" for="periodIntegral">Integral</label>
+          </div>
+        
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="period" id="periodVespertino" value="Vespertino">
+            <label class="form-check-label" for="periodVespertino">Vespertino</label>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label me-4">Matérias:</label>
+        
+          <div *ngFor="let subject of allSubjects" class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="{{subject}}" [value]="subject" [checked]="selectedSubjects.includes(subject)" (change)="addSubject($event)">
+            <label class="form-check-label" for="{{subject}}">{{ subject }}</label>
+            
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" (click)="save()">
+          Salvar
+        </button>
+      </form>
+
+
+      <h1 class="text-center">Cursos Cadastrados</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Periodo</th>            
+            <th scope="col">Componentes</th>
+            <th scope="col">Remover</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of courses">
+            <th scope="row">{{ c.id }}</th>
+            <td>{{ c.name }}</td>
+            <td>{{ c.period }}</td>
+            
+            <td>{{ c.subjects }}</td>
+            <td>
+              <button class="btn btn-danger icon-link" (click)="delete(c)"></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

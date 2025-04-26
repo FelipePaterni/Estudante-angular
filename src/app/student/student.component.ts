@@ -33,6 +33,7 @@ export class StudentComponent implements OnInit {
       next: (json) => (this.students = json),
     });
   }
+  
 
   save() {
     this.service.save(this.formGroupStudent.value).subscribe({
