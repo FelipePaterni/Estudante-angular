@@ -28,7 +28,7 @@ export class CourseComponent implements OnInit {
   }
 
   addSubject(event: any) {
-    const subjects = this.subjectsFormArray;
+    const subjects = this.subjectsFormArray();
     const value = event.target.value;
   
     if (event.target.checked) {
@@ -45,7 +45,7 @@ export class CourseComponent implements OnInit {
     }
   }
 
-  get subjectsFormArray() {
+ subjectsFormArray() {
     return this.formGroupCourse.get('subjects') as FormArray;
   }
 
@@ -64,7 +64,7 @@ export class CourseComponent implements OnInit {
       next: (json) => {
         this.courses.push(json);
         this.formGroupCourse.reset();
-        this.subjectsFormArray.clear(); 
+        this.subjectsFormArray().clear(); 
         this.selectedSubjects = [];
       },
     });

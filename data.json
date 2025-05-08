@@ -15,20 +15,28 @@
     {
       "id": 1,
       "name": "ADS",
-      "period": "Noturno",
+      "period": "Integral",
       "subjects": [
-        "Algoritmos",
-        "Banco de Dados"
+        "Estrutura de Dados",
+        "Algoritmos"
       ]
     },
     {
       "id": 2,
-      "name": "",
-      "period": "",
+      "name": "GTI",
+      "period": null,
       "subjects": [
-        "Algoritmos",
-        "Estrutura de Dados",
         "Banco de Dados"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Gestão Empresarial",
+      "period": "Noturno",
+      "subjects": [
+        "Banco de Dados",
+        "Algoritmos",
+        "Estrutura de Dados"
       ]
     }
   ]
